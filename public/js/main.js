@@ -29111,7 +29111,7 @@ function initTypeahead(msg, data) {
 // http://leaflet-extras.github.io/leaflet-providers/preview/
 // Ex: http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
 // You want to change this - our base tiles only cover Mecklenburg County NC.
-var baseTilesURL = "http://{s}.tiles.mapbox.com/v3/codeforamerica.ijj7831e/{z}/{x}/{y}.png" + cacheBuster;
+var baseTilesURL = "http://{s}.tiles.mapbox.com/v3/codeforamerica.ijj7831e/{z}/{x}/{y}.png";
 
 // The basic geographic setup for your map: the minimum zoom level,
 // maximum zoom level, and the starting zoom level, the map center point, and when
@@ -29248,9 +29248,12 @@ $(document).ready(function () {
         $("#metric option[value='" + getURLParameter('m') + "']").prop('selected', true);
     }
     else {
-        var $options = $('.chosen-select').find('option'),
-            random = Math.floor((Math.random() * $options.length));
-        $options.eq(random).prop('selected', true);
+        //user-testing: set "Housing Code Violations" as default rather than set random default
+        $("#metric option[value='ce-housing']").prop('selected', true);
+
+        // var $options = $('.chosen-select').find('option'),
+        //     random = Math.floor((Math.random() * $options.length));
+        // $options.eq(random).prop('selected', true);
     }
 
     // set window popstate event
@@ -29482,6 +29485,14 @@ function changeMetric(data) {
         'metricdata': data,
         'metric': theVal
     });
+
+    //user-testing: only show table when Code Enforcement categories are selected
+    if (theVal == "ce-housing" || theVal == "ce-nuisance") {
+        $("#user-testing-ce-table").show();
+    }
+    else {
+        $("#user-testing-ce-table").hide();
+    }
 }
 
 function processMetric(msg, data) {

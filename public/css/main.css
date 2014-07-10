@@ -5837,6 +5837,17 @@ rect.bar {
   padding-top: 12px;
 }
 /*@brand-primary: #008F75;*/
+#user-testing-time {
+  margin-left: 5px;
+}
+#user-testing-time .dropdown-toggle {
+  background-color: #1fa67a;
+  color: white;
+}
+#user-testing-ce-table {
+  margin-top: 50px;
+  position: relative;
+}
 /* OldIE Prompt */
 .oldie {
   width: 100%;
@@ -5955,6 +5966,7 @@ body {
 #map {
   height: 550px;
   background: rgba(0, 0, 0, 0);
+  border: 1px solid #d3d4d8;
   border-top: none;
 }
 .mapsearch {
@@ -6019,7 +6031,7 @@ table tr.d3-highlight {
     font-size: 18px;
   }
   .map-container {
-    height: 380px;
+    height: 590px;
   }
   #map {
     height: 320px;

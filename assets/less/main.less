@@ -17,6 +17,21 @@
 /*@brand-primary: #008F75;*/
 @brand-primary: #1fa67a;
 
+// user-testing: refactor if keeping components
+#user-testing-time {
+    margin-left: 5px;
+    .dropdown-toggle {
+        background-color: @brand-primary;
+        color: white;
+    }
+}
+
+#user-testing-ce-table {
+    margin-top: 50px;
+    position: relative;
+}
+
+
 /* OldIE Prompt */
 .oldie {
     width: 100%;
@@ -158,6 +173,7 @@ body {
     //background: url(../images/wet-graph-paper-seamless-background.jpg);
     background: rgba(0,0,0,0);
     //border: 1px dashed #d3d4d8;
+    border: 1px solid #d3d4d8;
     border-top: none;
     //box-shadow: @fancyshadow;
 }
@@ -240,7 +256,9 @@ table {
     }
     // map
     .map-container {
-        height: 380px;
+        // user-testing: comment original height back in if not using the table
+        // height: 380px;
+        height: 590px;
     }
     #map {
         height: 320px;
